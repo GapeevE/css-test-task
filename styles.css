@@ -1,0 +1,272 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./main.scss ***!
+  \****************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap);
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./main.scss (1) ***!
+  \********************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  background-color: #d1ffe1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+}
+@media (max-width: 639px) {
+  body {
+    background-color: #d1ffe1;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  body {
+    background-color: #d7f0ff;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    background-color: #eaddff;
+    justify-content: space-between;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ADFCC8;
+  z-index: 2;
+}
+@media (max-width: 639px) {
+  header {
+    background-color: #ADFCC8;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  header {
+    background-color: #95D9FF;
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    background-color: #eaddff;
+    justify-content: flex-end;
+  }
+}
+header .menu {
+  background-color: #D6BDFF;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 30px);
+  padding: 15px;
+  padding-top: 87px;
+  z-index: 3;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  header .menu {
+    width: calc(40% - 30px);
+  }
+}
+@media (min-width: 1024px) {
+  header .menu {
+    width: calc(30% - 80px);
+    transform: translateX(0);
+    background-color: #eaddff;
+    border-right: 2px solid rgba(0, 0, 0, 0.14);
+    padding: 40px;
+    padding-top: 40px;
+  }
+}
+header .menu--open {
+  transform: translateX(0);
+}
+header .menu ul {
+  list-style-type: none;
+}
+header .menu ul li {
+  border-radius: 30px;
+  padding: 10px;
+  background-color: inherit;
+  transition: background-color 0.4s ease-in-out;
+}
+header .menu ul li:hover {
+  background-color: rgba(255, 57, 235, 0.15);
+  transition: background-color 0.4s ease-in-out;
+}
+header .menu ul li a {
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  display: flex;
+  text-decoration: none;
+  outline: none;
+}
+header .menu ul li a svg {
+  display: block;
+  min-width: 31px;
+  min-height: 31px;
+}
+header .menu ul li a p {
+  color: black;
+  font-weight: 600;
+  font-size: 16px;
+}
+header .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+header button {
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.15;
+  z-index: 4;
+  transition: opacity 0.4s ease-in-out;
+  outline: none;
+}
+header button:hover {
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+}
+@media (min-width: 1024px) {
+  header button {
+    display: none;
+  }
+}
+header a {
+  opacity: 0.13;
+  text-decoration: none;
+  transition: opacity 0.4s ease-in-out;
+  outline: none;
+}
+header a:hover {
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+}
+
+main {
+  margin-top: 77px;
+  padding: 15px;
+}
+@media (min-width: 1024px) {
+  main {
+    margin-left: 30%;
+    padding: 40px;
+    margin-top: 60px;
+  }
+}
+
+.cards {
+  display: grid;
+  gap: 15px;
+  align-items: stretch;
+  grid-template-columns: 150px;
+  justify-content: center;
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .cards {
+    grid-template-columns: repeat(2, 150px);
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.cards .card {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  max-height: 90px;
+  min-width: 95px;
+  max-width: 130px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cards .card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in;
+}
+@media (min-width: 640px) {
+  .cards .card {
+    max-width: none;
+  }
+}
+
+footer {
+  padding: 15px;
+  color: black;
+  background-color: #ADFCC8;
+  margin-bottom: -20px;
+}
+@media (max-width: 639px) {
+  footer {
+    background-color: #ADFCC8;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  footer {
+    background-color: #95D9FF;
+  }
+}
+@media (min-width: 1024px) {
+  footer {
+    background-color: #eaddff;
+    position: relative;
+    z-index: 5;
+    border-top: 2px solid rgba(0, 0, 0, 0.14);
+  }
+}
+footer h1 {
+  font-weight: 700;
+  font-size: 14px;
+}
+footer p {
+  font-weight: 500;
+  font-size: 12px;
+}
