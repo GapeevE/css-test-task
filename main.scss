@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+$green: #ADFCC8;
+$light-green: #d1ffe1;
+$purple: #D6BDFF;
+$light-purple: #eaddff;
+$pink: #FF39EB;
+$blue: #95D9FF;
+$light-blue: #d7f0ff;
+
+$mobile: 320px;      
+$tablet: 640px;      
+$desktop: 1024px;    
+$large-desktop: 1280px;
+
+body {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    background-color: $light-green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+
+    @media (max-width: #{$tablet - 1}) {
+        background-color: $light-green; 
+    }
+
+    @media (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+        background-color: $light-blue;
+        justify-content: space-between;
+    }
+
+    @media (min-width: $desktop) {
+        background-color: $light-purple;
+        justify-content: space-between;
+    }
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $green;
+    z-index: 2;
+
+    @media (max-width: #{$tablet - 1}) {
+        background-color: $green; 
+    }
+
+    @media (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+        background-color: $blue;
+    }
+
+    @media (min-width: $desktop) {
+        background-color: $light-purple;
+        justify-content: flex-end;
+    }
+
+    .menu {
+        background-color: $purple;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 30px);
+        padding: 15px;
+        padding-top: 87px;
+        z-index: 3;
+        overflow-x: hidden;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+
+        @media (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+            width: calc(40% - 30px);
+        }
+
+        @media (min-width: $desktop) {
+            width: calc(30% - 80px);
+            transform: translateX(0);
+            background-color: $light-purple;
+            border-right: 2px solid rgba(black, 0.14);
+            padding: 40px;
+            padding-top: 40px;
+        }
+
+        &--open {
+            transform: translateX(0);
+        }
+
+        ul {
+            list-style-type: none;
+            overflow-y: auto;
+
+            li {
+                border-radius: 30px;
+                padding: 10px;
+                background-color: inherit;
+                transition: background-color 0.4s ease-in-out;
+
+                &:hover {
+                    background-color: rgba($color: $pink, $alpha: 0.15);
+                    transition: background-color 0.4s ease-in-out;
+                }
+
+                a {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: start;
+                    gap: 10px;
+                    display: flex;
+                    text-decoration: none;
+                    outline: none;
+
+                    svg {
+                        display: block;
+                        min-width: 31px;
+                        min-height: 31px;
+                    }
+
+                    p {
+                        color: black;
+                        font-weight: 600;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    button {
+        background-color: transparent;
+        cursor: pointer;
+        opacity: 0.15;
+        z-index: 4;
+        transition: opacity 0.4s ease-in-out;
+        outline: none;
+
+        &:hover {
+            opacity: 0.5; 
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        @media (min-width: $desktop) {
+            display: none;
+        }
+    }
+
+    a {
+        opacity: 0.13;
+        text-decoration: none;
+        transition: opacity 0.4s ease-in-out;
+        outline: none;
+        &:hover {
+            opacity: 0.5;
+            transition: opacity 0.4s ease-in-out;
+        }
+    }
+}
+
+main {
+    margin-top: 77px;
+    padding: 15px;
+
+    @media (min-width: $desktop) {
+        margin-left: 30%;
+        padding: 40px;
+        margin-top: 60px;
+    }
+}
+
+.cards {
+    display: grid;
+    gap: 15px;
+    align-items: stretch;
+    grid-template-columns: 150px;
+    justify-content: center;
+
+    @media (min-width: $mobile) and (max-width: #{$tablet - 1}) {
+        grid-template-columns: repeat(2, 150px);
+    }
+
+    @media (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $desktop) and (max-width: #{$large-desktop - 1}) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: $large-desktop) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .card {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.5;
+        max-height: 90px;
+        min-width:95px;
+        max-width: 130px;
+        padding: 10px;
+        background-color: rgba($color: black, $alpha: 0.1);
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in;
+        }
+
+        @media (min-width: $tablet) {
+            max-width: none;
+        }
+    }
+}
+
+footer {
+    padding: 15px;
+    color: black;
+    background-color: $green;
+    margin-bottom: -20px;
+
+    @media (max-width: #{$tablet - 1}) {
+        background-color: $green; 
+    }
+
+    @media (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+        background-color: $blue;
+    }
+
+    @media (min-width: $desktop) {
+        background-color: $light-purple;
+        position: relative;
+        z-index: 5;
+        border-top: 2px solid rgba(black, 0.14);
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 14px;
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+    }
+}
+
