@@ -2,7 +2,7 @@
 
 [Ссылка на макет в Figma](https://www.figma.com/design/ybQ9Bro0D2GUOsbZNIbyhh)
 
-[Live Demo](...)
+[Live Demo](https://gapeeve.github.io/css-test-task/)
 
 ## Инструкция по установке
 
